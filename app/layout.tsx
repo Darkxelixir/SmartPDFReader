@@ -5,6 +5,7 @@ import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/sonner";
+import { ORIGIN_URL } from "@/utils/helpers";
 
 const fontSans = FontSans({
   variable: "--font-sans",
@@ -16,6 +17,10 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "Smart PDF Reader",
   description: "This app summarizes and answers questions about PDF documents using AI.",
+  metadataBase: new URL(ORIGIN_URL),
+  alternates: {
+    canonical: ORIGIN_URL
+  },
 };
 
 export default function RootLayout({
