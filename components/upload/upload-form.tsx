@@ -40,8 +40,8 @@ export default function UploadForm() {
       toast("Error occurred while uploading!", { description: err.message });
       console.error("error occurred while uploading", err);
     },
-    onUploadBegin: (file) => {
-      console.log("upload has begun for", file);
+    onUploadBegin: (data) => {
+      console.log("upload has begun for", data);
     },
   });
 
@@ -110,7 +110,7 @@ export default function UploadForm() {
 
       // Parse the pdf using LangChain
       // Summarize the pdf using AI
-      const uploadFileUrl = uploadResponse[0].serverData.file.ufsUrl;
+      const uploadFileUrl = uploadResponse[0].serverData.fileUrl;
 
       // Save the summary to the database
       let storeResult: any;
