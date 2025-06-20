@@ -9,10 +9,10 @@ export async function generateSummaryFromOpenAI(pdfText: string) {
   try {
     const completion = await openai.chat.completions.create({
     //   model: 'deepseek/deepseek-r1-0528-qwen3-8b:free',
-      model: 'meta-llama/llama-4-scout-17b-16e-instruct:free',
+      // model: 'meta-llama/llama-4-scout-17b-16e-instruct:free',
     //   model: 'google/gemini-2.0-flash-exp:free',
     //   model: 'mistralai/devstral-small-2505:free',
-      // model: 'microsoft/mai-ds-r1:free',
+      model: 'microsoft/mai-ds-r1:free',
       messages: [
         {
           role: "system",
